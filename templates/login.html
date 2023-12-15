@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        h4 {
+        border : solid black 2px ;
+        width:70px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>first name</th>
+        <th>last name</th>
+        <th>place</th>
+    </tr>
+{% for lip in names %}
+    <tr>
+        <td>{{lip.fname}}</td>
+        <td>{{lip.lname}}</td>
+        <td>{{lip.place}}</td>
+    </tr>
+{% endfor %}
+</table>
+</body>
+</html>

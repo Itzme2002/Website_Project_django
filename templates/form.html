@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label>pro_name : </label>
+    <input type="text" id="text" name="pro_name"><br>
+    <label>pro_weight : </label>
+    <input type="text" id="numeric" name="pro_weight"><br>
+    <label>pro_price : </label>
+    <input type="text" id="price" name="pro_price"><br>
+    <label>pro_image : </label>
+    <input type="file" id="image" name="pro_image"><br>
+    <button>submit</button>
+</form>
+<table border="1">
+    <tr>
+    <th>name</th>
+    <th>weight</th>
+    <th>price</th>
+    <th>image</th>
+    </tr>
+    {% for Pros in Pro %}
+    <tr>
+        <td>{{Pros.pro_name}}</td>
+        <td>{{Pros.pro_weight}}</td>
+        <td>{{Pros.pro_price}}</td>
+        <td> <img src="{{Pros.pro_image.url}}" style="width:300px;height:300px;"> </td>
+            </tr>
+    {% endfor %}
+</body>
+</html>
